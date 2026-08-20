@@ -295,40 +295,60 @@
 
     @media (max-width: 700px) {
       /*
-        On mobile, hide all page text and the embedded viewer.
-        Only the PDF button remains visible.
+        Keep all workshop information visible on mobile.
+        Only replace the embedded PDF viewer with a button.
       */
 
-      body {
-        background: var(--white);
-      }
-
-      .top-bar {
-        display: none;
-      }
-
-      header,
-      .intro-grid,
-      .viewer-header,
-      footer {
-        display: none;
+      header {
+        padding: 2rem 1rem;
       }
 
       main {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 1rem;
+        padding: 1.25rem 0 2rem;
       }
 
       .container {
-        width: 100%;
+        width: min(100% - 1.5rem, 1180px);
+      }
+
+      .event-details {
+        display: block;
+      }
+
+      .event-details span {
+        display: block;
+        margin-top: 0.6rem;
+      }
+
+      .event-details span + span::before {
+        display: none;
+      }
+
+      .intro-grid {
+        display: block;
+        margin-bottom: 1.25rem;
+      }
+
+      .content-card {
+        margin-bottom: 1.25rem;
+        padding: 1.25rem;
+      }
+
+      .organisers {
+        columns: 1;
       }
 
       .programme-card {
-        border: 0;
-        box-shadow: none;
+        border-radius: 0.65rem;
+      }
+
+      .viewer-header {
+        display: block;
+        padding: 1rem 1.25rem;
+      }
+
+      .viewer-header p {
+        margin-top: 0.4rem;
       }
 
       .desktop-pdf-viewer {
@@ -339,6 +359,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 1.5rem 1rem;
+        background: var(--light-teal);
       }
 
       .mobile-pdf-viewer .button {
@@ -346,6 +368,10 @@
         max-width: 360px;
         min-height: 54px;
         font-size: 1rem;
+      }
+
+      footer {
+        padding: 1.25rem 1rem 2rem;
       }
     }
   </style>
