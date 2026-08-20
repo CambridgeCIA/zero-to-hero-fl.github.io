@@ -1,46 +1,340 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>
+    From Zero to Hero — Federated AI in Healthcare Systems
+  </title>
+
+  <meta
+    name="description"
+    content="From Zero to Hero: Federated AI in Healthcare Systems workshop programme."
+  >
+
   <style>
+    :root {
+      --navy: #071827;
+      --teal: #08aaa8;
+      --dark-teal: #087d7d;
+      --light-teal: #e8f5f5;
+      --text: #142532;
+      --muted: #60717b;
+      --background: #f4f7f8;
+      --white: #ffffff;
+      --border: #d7e3e5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      color: #222;
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family:
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
+
+    .top-bar {
+      height: 8px;
+      background: var(--navy);
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 5px solid var(--teal);
+      padding: 3rem 1.25rem 2.25rem;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 2.5rem));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--dark-teal);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
     }
 
     h1 {
-      color: #1f4b99;
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 4.2rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
     }
 
-    a {
-      color: #1f4b99;
+    .subtitle {
+      max-width: 850px;
+      margin: 1rem 0 0;
+      color: var(--dark-teal);
+      font-size: clamp(1.25rem, 3vw, 2rem);
+      line-height: 1.25;
+    }
+
+    .event-details {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      margin: 1.5rem 0 0;
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 650;
+    }
+
+    .event-details span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .event-details span + span::before {
+      content: "•";
+      color: var(--teal);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.7rem 1rem;
+      border: 2px solid var(--dark-teal);
+      border-radius: 0.45rem;
+      background: var(--dark-teal);
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: none;
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: var(--navy);
+      border-color: var(--navy);
+      transform: translateY(-1px);
+    }
+
+    .button.secondary {
+      background: var(--light-teal);
+      color: var(--dark-teal);
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus-visible {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--navy);
+    }
+
+    main {
+      padding: 1.5rem 0 3rem;
+    }
+
+    .viewer-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      background: var(--white);
+      box-shadow: 0 5px 20px rgba(12, 35, 48, 0.12);
+    }
+
+    .viewer-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      background: var(--white);
+    }
+
+    .viewer-title {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 750;
+    }
+
+    .viewer-hint {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .pdf-viewer {
+      display: block;
+      width: 100%;
+      height: min(82vh, 1000px);
+      min-height: 650px;
+      border: 0;
+      background: #525659;
+    }
+
+    .fallback {
+      padding: 1.5rem;
+      color: var(--text);
+      background: var(--light-teal);
+      text-align: center;
+    }
+
+    .fallback a {
+      color: var(--dark-teal);
+      font-weight: 700;
+    }
+
+    footer {
+      padding: 1.5rem 1.25rem 2.5rem;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding-top: 2rem;
+      }
+
+      .container {
+        width: min(100% - 1.5rem, 1180px);
+      }
+
+      .event-details {
+        display: block;
+      }
+
+      .event-details span {
+        display: block;
+        margin-top: 0.5rem;
+      }
+
+      .event-details span + span::before {
+        display: none;
+      }
+
+      .viewer-header {
+        display: block;
+      }
+
+      .viewer-hint {
+        margin-top: 0.35rem;
+      }
+
+      .pdf-viewer {
+        height: 78vh;
+        min-height: 560px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>Hello, I’m Your Name</h1>
+  <div class="top-bar"></div>
 
-  <p>
-    I am a researcher and engineer working on federated learning,
-    healthcare AI, and privacy-preserving machine learning.
-  </p>
+  <header>
+    <div class="container">
+      <p class="eyebrow">Two-day workshop</p>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>Federated healthcare infrastructure</li>
-    <li>Privacy-preserving clinical machine learning</li>
-  </ul>
+      <h1>From Zero to Hero</h1>
 
-  <h2>Links</h2>
-  <ul>
-    <li><a href="https://github.com/YOUR_GITHUB_USERNAME">GitHub</a></li>
-    <li><a href="mailto:your.email@example.com">Email</a></li>
-  </ul>
+      <p class="subtitle">
+        Federated AI in Healthcare Systems
+      </p>
+
+      <div class="event-details" aria-label="Event details">
+        <span>24–25 August 2026</span>
+        <span>St John's College, Cambridge</span>
+        <span>Flower Labs sponsor</span>
+      </div>
+
+      <div class="actions">
+        <a
+          class="button"
+          href="assets/FromZeroToHero_programme.pdf"
+          target="_blank"
+          rel="noopener"
+        >
+          Open PDF in new tab
+        </a>
+
+        <a
+          class="button secondary"
+          href="assets/FromZeroToHero_programme.pdf"
+          download
+        >
+          Download programme
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section
+        class="viewer-card"
+        aria-labelledby="programme-heading"
+      >
+        <div class="viewer-header">
+          <h2 id="programme-heading" class="viewer-title">
+            Workshop programme
+          </h2>
+
+          <p class="viewer-hint">
+            Use the PDF controls to zoom, search, and navigate pages.
+          </p>
+        </div>
+
+        <iframe
+          class="pdf-viewer"
+          src="assets/FromZeroToHero_programme.pdf#view=FitH"
+          title="From Zero to Hero workshop programme"
+        >
+          <div class="fallback">
+            <p>
+              Your browser cannot display the embedded PDF.
+            </p>
+
+            <a
+              href="assets/FromZeroToHero_programme.pdf"
+              target="_blank"
+              rel="noopener"
+            >
+              Open the programme PDF
+            </a>
+          </div>
+        </iframe>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      From Zero to Hero · Federated AI in Healthcare Systems
+    </p>
+  </footer>
 </body>
 </html>
