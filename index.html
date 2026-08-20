@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="From Zero to Hero: Federated AI in Healthcare Systems workshop programme."
+    content="From Zero to Hero: Federated AI in Healthcare Systems workshop in Cambridge, 24–25 August 2026."
   >
 
   <style>
@@ -52,7 +52,7 @@
     }
 
     header {
-      padding: 3rem 1.25rem 2.25rem;
+      padding: 3rem 1.25rem 2.5rem;
       background: var(--white);
       border-bottom: 5px solid var(--teal);
     }
@@ -72,7 +72,7 @@
     }
 
     h1 {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0;
       font-size: clamp(2rem, 5vw, 4.2rem);
       line-height: 1.05;
@@ -91,7 +91,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.75rem 1.5rem;
-      margin: 1.5rem 0 0;
+      margin-top: 1.5rem;
       font-weight: 650;
     }
 
@@ -106,48 +106,88 @@
       color: var(--teal);
     }
 
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1.75rem;
+    .sponsor {
+      margin: 1.75rem 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
     }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0.7rem 1rem;
-      border: 2px solid var(--dark-teal);
-      border-radius: 0.45rem;
-      background: var(--dark-teal);
-      color: var(--white);
-      font-weight: 700;
-      text-decoration: none;
-      transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
-    }
-
-    .button:hover,
-    .button:focus-visible {
-      background: var(--navy);
-      border-color: var(--navy);
-      transform: translateY(-1px);
-    }
-
-    .button.secondary {
-      background: var(--light-teal);
-      color: var(--dark-teal);
+    .sponsor strong {
+      color: var(--text);
     }
 
     main {
-      padding: 1.5rem 0 3rem;
+      padding: 2rem 0 3.5rem;
     }
 
-    .viewer-card {
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .content-card {
+      padding: 1.75rem;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      background: var(--white);
+      box-shadow: 0 4px 16px rgba(12, 35, 48, 0.08);
+    }
+
+    .content-card h2 {
+      margin: 0 0 0.9rem;
+      color: var(--dark-teal);
+      font-size: 1.35rem;
+    }
+
+    .content-card h3 {
+      margin: 1.5rem 0 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .content-card p {
+      margin: 0 0 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .content-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .facts {
+      display: grid;
+      gap: 1rem;
+      margin: 0;
+    }
+
+    .fact {
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .fact:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .fact-label {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--dark-teal);
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .fact-value {
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .programme-card {
       overflow: hidden;
       border: 1px solid var(--border);
       border-radius: 0.75rem;
@@ -156,22 +196,19 @@
     }
 
     .viewer-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
       padding: 1rem 1.25rem;
       border-bottom: 1px solid var(--border);
+      background: var(--white);
     }
 
-    .viewer-title {
+    .viewer-header h2 {
       margin: 0;
-      font-size: 1rem;
-      font-weight: 750;
+      color: var(--text);
+      font-size: 1.1rem;
     }
 
-    .viewer-hint {
-      margin: 0;
+    .viewer-header p {
+      margin: 0.35rem 0 0;
       color: var(--muted);
       font-size: 0.9rem;
     }
@@ -187,44 +224,111 @@
 
     .mobile-pdf-viewer {
       display: none;
-      padding: 1.5rem;
-      background: var(--light-teal);
-      text-align: center;
     }
 
-    .mobile-pdf-viewer p {
-      margin-top: 0;
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0.75rem 1.1rem;
+      border: 2px solid var(--dark-teal);
+      border-radius: 0.45rem;
+      background: var(--dark-teal);
+      color: var(--white);
+      font-weight: 700;
+      text-decoration: none;
+      transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: var(--navy);
+      border-color: var(--navy);
+      transform: translateY(-1px);
+    }
+
+    .organisers {
+      columns: 2;
+      column-gap: 2rem;
+      margin: 0;
+      padding-left: 1.2rem;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.7;
+    }
+
+    .organisers li {
+      break-inside: avoid;
+      margin-bottom: 0.5rem;
+    }
+
+    .venue-link {
+      color: var(--dark-teal);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .venue-link:hover,
+    .venue-link:focus-visible {
+      text-decoration: underline;
     }
 
     footer {
-      padding: 1.5rem 1.25rem 2.5rem;
+      padding: 1.75rem 1.25rem 2.5rem;
       color: var(--muted);
       text-align: center;
       font-size: 0.9rem;
     }
 
+    @media (max-width: 800px) {
+      .intro-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .organisers {
+        columns: 1;
+      }
+    }
+
     @media (max-width: 700px) {
-      header {
-        padding-top: 2rem;
+      /*
+        On mobile, hide all page text and the embedded viewer.
+        Only the PDF button remains visible.
+      */
+
+      body {
+        background: var(--white);
+      }
+
+      .top-bar {
+        display: none;
+      }
+
+      header,
+      .intro-grid,
+      .viewer-header,
+      footer {
+        display: none;
+      }
+
+      main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 1rem;
       }
 
       .container {
-        width: min(100% - 1.5rem, 1180px);
+        width: 100%;
       }
 
-      .event-details {
-        display: block;
-      }
-
-      .event-details span {
-        display: block;
-        margin-top: 0.5rem;
-      }
-
-      .event-details span + span::before {
-        display: none;
+      .programme-card {
+        border: 0;
+        box-shadow: none;
       }
 
       .desktop-pdf-viewer {
@@ -232,15 +336,16 @@
       }
 
       .mobile-pdf-viewer {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
 
-      .viewer-header {
-        display: block;
-      }
-
-      .viewer-hint {
-        margin-top: 0.4rem;
+      .mobile-pdf-viewer .button {
+        width: 100%;
+        max-width: 360px;
+        min-height: 54px;
+        font-size: 1rem;
       }
     }
   </style>
@@ -262,50 +367,183 @@
       <div class="event-details">
         <span>24–25 August 2026</span>
         <span>St John's College, Cambridge</span>
-        <span>Flower Labs sponsor</span>
+        <span>In-person event</span>
       </div>
 
-      <div class="actions">
-        <a
-          class="button"
-          href="FromZeroToHero_programme_v4.pdf"
-          target="_blank"
-          rel="noopener"
-        >
-          Open PDF in new tab
-        </a>
-
-        <a
-          class="button secondary"
-          href="FromZeroToHero_programme_v4.pdf"
-          download
-        >
-          Download programme
-        </a>
-      </div>
+      <p class="sponsor">
+        Exclusive sponsor: <strong>Flower Labs</strong>
+      </p>
     </div>
   </header>
 
   <main>
     <div class="container">
+      <section class="intro-grid">
+        <article class="content-card">
+          <h2>About the workshop</h2>
+
+          <p>
+            Federated learning is reshaping how we build machine learning
+            models on sensitive clinical data, allowing institutions to
+            collaborate and learn from one another without moving patients'
+            records.
+          </p>
+
+          <p>
+            This two-day workshop is designed to take participants from zero
+            to hero, whatever their starting point. The programme combines
+            keynotes, research talks, hands-on tutorials, panel discussions,
+            and live demonstrations exploring the future of federated AI in
+            healthcare.
+          </p>
+
+          <p>
+            Whether you are a clinician curious about the methods, a researcher
+            deploying federated systems, or someone who has only just heard the
+            term, the workshop offers an opportunity to learn, ask questions,
+            and connect with others working in the field.
+          </p>
+
+          <h3>What to expect</h3>
+
+          <p>
+            Participants will hear from experts working at the frontier of
+            federated healthcare AI, work through prepared tutorial notebooks,
+            and explore practical issues involved in moving from research
+            pilots to real clinical systems.
+          </p>
+
+          <p>
+            Everyone who participates will receive a certificate of attendance.
+          </p>
+        </article>
+
+        <aside class="content-card">
+          <h2>Event details</h2>
+
+          <div class="facts">
+            <div class="fact">
+              <span class="fact-label">Date</span>
+              <div class="fact-value">
+                Monday 24 – Tuesday 25 August 2026
+              </div>
+            </div>
+
+            <div class="fact">
+              <span class="fact-label">Time</span>
+              <div class="fact-value">
+                Monday 9:00 AM – Tuesday 5:00 PM
+              </div>
+            </div>
+
+            <div class="fact">
+              <span class="fact-label">Venue</span>
+              <div class="fact-value">
+                <a
+                  class="venue-link"
+                  href="https://www.google.com/maps/search/?api=1&query=St%20John%27s%20College%2C%20Cambridge"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  St John's College
+                </a>
+                <br>
+                Cambridge, England
+              </div>
+            </div>
+
+            <div class="fact">
+              <span class="fact-label">Format</span>
+              <div class="fact-value">
+                In-person only
+              </div>
+            </div>
+
+            <div class="fact">
+              <span class="fact-label">Practical note</span>
+              <div class="fact-value">
+                Please bring your own laptop for the Day 2 hands-on tutorial.
+              </div>
+            </div>
+
+            <div class="fact">
+              <span class="fact-label">Sponsor</span>
+              <div class="fact-value">
+                Flower Labs
+              </div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="content-card" style="margin-bottom: 2rem;">
+        <h2>Organising committee</h2>
+
+        <ul class="organisers">
+          <li>
+            Fan Zhang — Department of Applied Mathematics and Theoretical
+            Physics, University of Cambridge, UK
+          </li>
+
+          <li>
+            Daniel Kreuter — Precision Healthcare University Research Institute,
+            Queen Mary University of London, UK
+          </li>
+
+          <li>
+            Shiqiang Wang — CORE-AIx, Department of Computer Science,
+            University of Exeter, UK
+          </li>
+
+          <li>
+            Gregory Verghese — PharosAI, UK
+          </li>
+
+          <li>
+            Nicholas Lane — Flower Labs and Department of Computer Science and
+            Technology, University of Cambridge, UK
+          </li>
+
+          <li>
+            Kapal Dev — Department of Computer Science, Munster Technological
+            University, Ireland
+          </li>
+
+          <li>
+            Javier Fernandez-Marques — Flower Labs, UK
+          </li>
+
+          <li>
+            Carola-Bibiane Schönlieb — Cambridge Image Analysis, Department of
+            Applied Mathematics and Theoretical Physics, University of
+            Cambridge, UK
+          </li>
+
+          <li>
+            Michael Roberts — BloodCounts! and Department of Applied
+            Mathematics and Theoretical Physics, University of Cambridge, UK
+          </li>
+        </ul>
+      </section>
+
       <section
-        class="viewer-card"
+        class="programme-card"
         aria-labelledby="programme-heading"
       >
         <div class="viewer-header">
-          <h2 id="programme-heading" class="viewer-title">
+          <h2 id="programme-heading">
             Workshop programme
           </h2>
 
-          <p class="viewer-hint">
-            Use the PDF controls to zoom and navigate pages.
+          <p>
+            Use the PDF controls to zoom, search, print, and navigate pages.
           </p>
         </div>
 
         <div class="desktop-pdf-viewer">
           <iframe
             src="FromZeroToHero_programme_v4.pdf#view=FitH"
-            title="From Zero to Hero workshop programme"
+            title="From Zero to Hero workshop programme PDF"
           >
             <p>
               Your browser cannot display the embedded PDF.
@@ -317,11 +555,6 @@
         </div>
 
         <div class="mobile-pdf-viewer">
-          <p>
-            On mobile, open the programme in your browser's PDF reader
-            for reliable scrolling and pinch-to-zoom.
-          </p>
-
           <a
             class="button"
             href="FromZeroToHero_programme_v4.pdf"
