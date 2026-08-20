@@ -52,9 +52,9 @@
     }
 
     header {
+      padding: 3rem 1.25rem 2.25rem;
       background: var(--white);
       border-bottom: 5px solid var(--teal);
-      padding: 3rem 1.25rem 2.25rem;
     }
 
     .container {
@@ -92,8 +92,6 @@
       flex-wrap: wrap;
       gap: 0.75rem 1.5rem;
       margin: 1.5rem 0 0;
-      color: var(--text);
-      font-size: 1rem;
       font-weight: 650;
     }
 
@@ -145,13 +143,6 @@
       color: var(--dark-teal);
     }
 
-    .button.secondary:hover,
-    .button.secondary:focus-visible {
-      background: var(--white);
-      color: var(--navy);
-      border-color: var(--navy);
-    }
-
     main {
       padding: 1.5rem 0 3rem;
     }
@@ -171,7 +162,6 @@
       gap: 1rem;
       padding: 1rem 1.25rem;
       border-bottom: 1px solid var(--border);
-      background: var(--white);
     }
 
     .viewer-title {
@@ -186,7 +176,7 @@
       font-size: 0.9rem;
     }
 
-    .pdf-viewer {
+    .desktop-pdf-viewer iframe {
       display: block;
       width: 100%;
       height: min(82vh, 1000px);
@@ -195,16 +185,17 @@
       background: #525659;
     }
 
-    .fallback {
+    .mobile-pdf-viewer {
+      display: none;
       padding: 1.5rem;
-      color: var(--text);
       background: var(--light-teal);
       text-align: center;
     }
 
-    .fallback a {
-      color: var(--dark-teal);
-      font-weight: 700;
+    .mobile-pdf-viewer p {
+      margin-top: 0;
+      color: var(--muted);
+      line-height: 1.6;
     }
 
     footer {
@@ -236,17 +227,20 @@
         display: none;
       }
 
+      .desktop-pdf-viewer {
+        display: none;
+      }
+
+      .mobile-pdf-viewer {
+        display: block;
+      }
+
       .viewer-header {
         display: block;
       }
 
       .viewer-hint {
-        margin-top: 0.35rem;
-      }
-
-      .pdf-viewer {
-        height: 78vh;
-        min-height: 560px;
+        margin-top: 0.4rem;
       }
     }
   </style>
@@ -265,7 +259,7 @@
         Federated AI in Healthcare Systems
       </p>
 
-      <div class="event-details" aria-label="Event details">
+      <div class="event-details">
         <span>24–25 August 2026</span>
         <span>St John's College, Cambridge</span>
         <span>Flower Labs sponsor</span>
@@ -274,7 +268,7 @@
       <div class="actions">
         <a
           class="button"
-          href="FromZeroToHero_programme_v4.pdf"
+          href="FromZeroToHero_programme.pdf"
           target="_blank"
           rel="noopener"
         >
@@ -283,7 +277,7 @@
 
         <a
           class="button secondary"
-          href="FromZeroToHero_programme_v4.pdf"
+          href="FromZeroToHero_programme.pdf"
           download
         >
           Download programme
@@ -304,37 +298,45 @@
           </h2>
 
           <p class="viewer-hint">
-            Use the PDF controls to zoom, search, and navigate pages.
+            Use the PDF controls to zoom and navigate pages.
           </p>
         </div>
 
-        <iframe
-          class="pdf-viewer"
-          src="FromZeroToHero_programme_v4.pdf#view=FitH"
-          title="From Zero to Hero workshop programme"
-        >
-          <div class="fallback">
+        <div class="desktop-pdf-viewer">
+          <iframe
+            src="FromZeroToHero_programme.pdf#view=FitH"
+            title="From Zero to Hero workshop programme"
+          >
             <p>
               Your browser cannot display the embedded PDF.
+              <a href="FromZeroToHero_programme.pdf">
+                Open the programme PDF
+              </a>
             </p>
+          </iframe>
+        </div>
 
-            <a
-              href="FromZeroToHero_programme_v4.pdf"
-              target="_blank"
-              rel="noopener"
-            >
-              Open the programme PDF
-            </a>
-          </div>
-        </iframe>
+        <div class="mobile-pdf-viewer">
+          <p>
+            On mobile, open the programme in your browser's PDF reader
+            for reliable scrolling and pinch-to-zoom.
+          </p>
+
+          <a
+            class="button"
+            href="FromZeroToHero_programme.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            Open programme PDF
+          </a>
+        </div>
       </section>
     </div>
   </main>
 
   <footer>
-    <p>
-      From Zero to Hero · Federated AI in Healthcare Systems
-    </p>
+    From Zero to Hero · Federated AI in Healthcare Systems
   </footer>
 </body>
 </html>
