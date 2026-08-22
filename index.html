@@ -283,6 +283,67 @@
       font-size: 0.9rem;
     }
 
+    /* --- new tutorial section --- */
+    .tutorial-block {
+      margin: 2rem 0 1.5rem;
+    }
+
+    .tutorial-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: 0.75rem;
+      background: var(--light-teal);
+      border-left: 6px solid var(--teal);
+    }
+
+    .tutorial-card h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      color: var(--dark-teal);
+    }
+
+    .tutorial-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .colab-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-left: auto;
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.4rem;
+      background: var(--white);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      transition: transform 0.15s ease;
+      text-decoration: none;
+      font-weight: 600;
+      color: var(--dark-teal);
+    }
+
+    .colab-link:hover {
+      transform: scale(1.02);
+    }
+
+    .colab-link img {
+      display: block;
+      height: 28px;
+      width: auto;
+    }
+
+    .tutorial-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem 1.2rem;
+      width: 100%;
+    }
+
     @media (max-width: 800px) {
       .intro-grid {
         grid-template-columns: 1fr;
@@ -291,14 +352,20 @@
       .organisers {
         columns: 1;
       }
+
+      .tutorial-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .colab-link {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+      }
     }
 
     @media (max-width: 700px) {
-      /*
-        Keep all workshop information visible on mobile.
-        Only replace the embedded PDF viewer with a button.
-      */
-
       header {
         padding: 2rem 1rem;
       }
@@ -372,6 +439,14 @@
 
       footer {
         padding: 1.25rem 1rem 2rem;
+      }
+
+      .tutorial-card {
+        padding: 1.25rem;
+      }
+
+      .colab-link {
+        justify-content: center;
       }
     }
   </style>
@@ -500,6 +575,36 @@
             </div>
           </div>
         </aside>
+      </section>
+
+      <!-- TUTORIALS SECTION (new) -->
+      <section class="tutorial-block content-card" style="margin-bottom: 2rem;">
+        <h2>From Zero to Hero Tutorials</h2>
+        <div class="tutorial-card">
+          <div class="tutorial-meta">
+            <h3>Session 1 Tutorial Notebook</h3>
+            <p>Interactive Colab notebook – run the code right in your browser</p>
+            <a
+              class="colab-link"
+              href="https://colab.research.google.com/github/CambridgeCIA/zero-to-hero-fl.github.io/blob/main/tutorial_session_1.ipynb"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://colab.research.google.com/assets/colab-badge.svg"
+                alt="Open In Colab"
+                width="140"
+                height="28"
+                loading="lazy"
+              >
+              <span style="margin-left:0.15rem;">Open</span>
+            </a>
+          </div>
+        </div>
+        <p style="margin: 0.75rem 0 0; color: var(--muted); font-size: 0.95rem;">
+          The notebook covers fundamental federated learning concepts using
+          healthcare-relevant examples. No prior FL experience required.
+        </p>
       </section>
 
       <section class="content-card" style="margin-bottom: 2rem;">
