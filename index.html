@@ -283,7 +283,7 @@
       font-size: 0.9rem;
     }
 
-    /* --- new tutorial section --- */
+    /* --- tutorial section --- */
     .tutorial-block {
       margin: 2rem 0 1.5rem;
     }
@@ -342,6 +342,13 @@
       align-items: center;
       gap: 0.5rem 1.2rem;
       width: 100%;
+    }
+
+    .session-description {
+      margin: 0.5rem 0 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
     }
 
     @media (max-width: 800px) {
@@ -577,7 +584,7 @@
         </aside>
       </section>
 
-      <!-- TUTORIALS SECTION (new) -->
+      <!-- TUTORIALS SECTION (updated description, removed extra "Open" text) -->
       <section class="tutorial-block content-card" style="margin-bottom: 2rem;">
         <h2>From Zero to Hero Tutorials</h2>
         <div class="tutorial-card">
@@ -597,13 +604,11 @@
                 height="28"
                 loading="lazy"
               >
-              <span style="margin-left:0.15rem;">Open</span>
             </a>
           </div>
         </div>
-        <p style="margin: 0.75rem 0 0; color: var(--muted); font-size: 0.95rem;">
-          The notebook covers fundamental federated learning concepts using
-          healthcare-relevant examples. No prior FL experience required.
+        <p class="session-description">
+          Session 1 covers training and evaluating a local machine learning model for a clinical detection task on real healthcare data.
         </p>
       </section>
 
