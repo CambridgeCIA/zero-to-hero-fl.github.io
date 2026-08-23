@@ -297,6 +297,7 @@
       border-radius: 0.75rem;
       background: var(--light-teal);
       border-left: 6px solid var(--teal);
+      margin-bottom: 0.75rem; 
     }
 
     .tutorial-card h3 {
@@ -584,9 +585,10 @@
         </aside>
       </section>
 
-      <!-- TUTORIALS SECTION (updated description, removed extra "Open" text) -->
+      <!-- TUTORIALS SECTION (added Session 2 link, kept Session 1) -->
       <section class="tutorial-block content-card" style="margin-bottom: 2rem;">
         <h2>From Zero to Hero Tutorials</h2>
+
         <div class="tutorial-card">
           <div class="tutorial-meta">
             <h3>Session 1 Tutorial Notebook</h3>
@@ -609,6 +611,30 @@
         </div>
         <p class="session-description">
           Session 1 covers training and evaluating a local machine learning model for a clinical detection task on real healthcare data.
+        </p>
+
+        <div class="tutorial-card" style="margin-top: 1rem;">
+          <div class="tutorial-meta">
+            <h3>Session 2 Tutorial Notebook</h3>
+            <p>Interactive Colab notebook – run the code right in your browser</p>
+            <a
+              class="colab-link"
+              href="https://flower.ai/apps/javier/iron-deficiency"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://colab.research.google.com/assets/colab-badge.svg"
+                alt="Open In Colab"
+                width="140"
+                height="28"
+                loading="lazy"
+              >
+            </a>
+          </div>
+        </div>
+        <p class="session-description">
+          Session 2 explores federated learning across distributed healthcare data, using Flower to coordinate training without centralizing patient records.
         </p>
       </section>
 
